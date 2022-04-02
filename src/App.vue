@@ -11,7 +11,7 @@
   >
     <div class="wrapper">
       <img
-        :src="require('./assets/boxy-rare.jpeg')"
+        :src="character"
         @load="init()"
       >
       <h3>{{ subline }}</h3>
@@ -31,19 +31,30 @@ export default {
   },
   computed: {
     subline() {
-      return this.percentage < 100
+      return this.percentage < 60
         ? `🎉 There is still ${100 - this.percentage}% left for me to be free... 🎉`
-        : '💚 Thank you for scratching me free! 💚';
+        : `💚 Hello, I'm named ${this.name} and I'm ${this.rarity}. 💚`;
     },
   },
   data() {
     
-    var characters = ['boxy-rare'];
+    var characters = ['amy-rare',
+    'bow-common',
+    'boxy-rare',
+    'charles-common',
+    'hello-common',
+    'magentaflower-rare',
+    'melody-rare',
+    'snowdrop-legendary'];
     var selectedCharacter = Math.floor(Math.random() * characters.length);
+    var name = characters[selectedCharacter].split('-')[0];
+    var rarity = characters[selectedCharacter].split('-')[1];
     
     return {
       percentage: 0,
       selectedCharacter: characters[selectedCharacter],
+      name:name,
+      rarity:rarity,
       character: require('./assets/'+characters[selectedCharacter]+'.jpeg'),
       hide: {
         type: 'pattern',
