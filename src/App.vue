@@ -76,7 +76,10 @@ export default {
     'hello-common',
     'magentaflower-rare',
     'melody-rare',
-    'snowdrop-legendary'];
+    'snowdrop-legendary',
+    'babystamp-rare',
+    'carrots-rare',
+    'catstamp-common'];
     var selectedCharacter = Math.floor(Math.random() * characters.length);
     var name = characters[selectedCharacter].split('-')[0];
     var rarity = characters[selectedCharacter].split('-')[1];
