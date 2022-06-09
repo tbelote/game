@@ -4,7 +4,7 @@
   <div id="library">
     <template v-for="item in myLibrary">
       <div :key="item">
-        <img :src="item" />
+        <img :src="item" style="max-width: 500px; max-height: 500px;"/>
         <div><b>Name:</b>{{ item.replace(/.*\/img\//i,'').replace('.jpeg','').split('-')[0] }}</div>
         <div><b>Rarity:</b>{{ item.replace(/.*\/img\//i,'').replace('.jpeg','').split('-')[1].split('.')[0] }}</div>
       </div>
